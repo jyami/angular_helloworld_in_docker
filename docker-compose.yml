@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mynode:
+    build: 
+      context: ./docker
+      args:
+        - NODE_VERSION=${node_version}
+        - ANGULAR_VERSION=${angular_version}
+        - APP_NAME=${app_name}
+    #command: bash -c "/usr/local/bin/ng new test-app --minimal --routing --style scss --skip-git"
+    container_name: mynode
+    #tty: true
+    volumes:
+      - .:/var/app
+#    ports:
+#      - 4200:4200
