@@ -10,5 +10,4 @@ services:
     container_name: mynode
     volumes:
       - ./app:/var/app
-      #- /var/app/${app_name}/node_modules/
     command: "/usr/local/bin/ng new ${app_name} --minimal --routing --style scss --skip-git"
