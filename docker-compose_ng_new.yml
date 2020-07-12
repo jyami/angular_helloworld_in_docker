@@ -8,10 +8,7 @@ services:
         - ANGULAR_VERSION=${angular_version}
         - APP_NAME=${app_name}
     container_name: mynode
-    tty: true
     volumes:
       - ./app:/var/app
       #- /var/app/${app_name}/node_modules/
-    command: bash -c "cd /var/app/${app_name}; /usr/local/bin/ng build --aot ; /usr/local/bin/ng serve --host 0.0.0.0"
-    ports:
-      - 4200:4200
+    command: "/usr/local/bin/ng new ${app_name} --minimal --routing --style scss --skip-git"
